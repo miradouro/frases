@@ -53,23 +53,26 @@ class _HState extends State<H> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Image.asset("images/logo.png",fit: BoxFit.contain,alignment: Alignment.center,),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20),
+              SizedBox(
+                width: double.infinity,
+                height: 250,
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Center(
                     child: Text(
                       _frase,
                       style: const TextStyle(
                           fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.justify,
                     ),
                   ),
-                  ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.lightGreen),
-                    onPressed: _gerarFrase,
-                    child: const Text("Nova Frase",style: const TextStyle(fontSize: 30,color: Colors.white),),
-                  ),
-                ],
+                ),
+              ),
+              ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.lightGreen),
+                onPressed: _gerarFrase,
+                child: const Text("Nova Frase",style: const TextStyle(fontSize: 30,color: Colors.white),),
               ),
             ],
           ),
